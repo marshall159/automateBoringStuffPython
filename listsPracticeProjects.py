@@ -80,8 +80,8 @@ grid = [['.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
 
 
-for i in range(6):
-    print('\n')
+for i in range(len(grid[0])):
+    print()
     for j in range(len(grid)):
         print(grid[j][i], end = '')
     
