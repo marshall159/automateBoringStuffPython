@@ -32,6 +32,43 @@ def display_inventory(inventory):
         item_total += v
         
     print("Total number of items: " + str(item_total))
+    print()
 
 display_inventory(stuff)
 
+# List To Dictionary Function For Fantasy Game Inventory
+'''
+Imagine that a vanquished dragon’s loot is represented as a list of strings
+like this:
+
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+Write a function named addToInventory(inventory, addedItems), where the
+inventory parameter is a dictionary representing the player’s inventory
+(like in the previous project) and the addedItems parameter is a list like
+dragonLoot. The addToInventory() function should return a dictionary that
+represents the updated inventory. Note that the addedItems list can contain
+multiples of the same item. 
+
+The previous program (with your displayInventory() function from the previous
+project) would output the following:
+
+Inventory:
+45 gold coin
+1 rope
+1 ruby
+1 dagger
+
+Total number of items: 48
+'''
+
+def add_to_inventory(inventory, added_items):
+    for item in added_items:
+        inventory.setdefault(item, 0)
+        inventory[item] = inventory[item] + 1
+    return inventory
+
+inv = {'gold coin': 42, 'rope': 1}
+dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+inv = add_to_inventory(inv, dragon_loot)
+display_inventory(inv)
+        
