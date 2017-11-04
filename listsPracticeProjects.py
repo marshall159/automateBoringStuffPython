@@ -28,6 +28,32 @@ def comma(list):
         s += str(item) + ', '
     return s + 'and ' + str(end)
 
+# Comma Code Project v2
+
+def commaCode(list):
+    '''
+    (list) -> str
+
+    Return items of a list as a string with all items separated by a comma
+    and a space, with 'and' inserted before the last item.
+
+    >>> commaCode(['apples', 'bananas', 'tofu', 'cats'])
+    'apples, bananas, tofu, and cats'
+    >>> commaCode(['one', 'two', 'three'])
+    'one, two and three'
+    '''
+
+    s = ''
+    for i in range(len(list)):
+        if i == len(list) - 1:
+            s += 'and ' + list[i]
+        else:
+            s += list[i] + ', '
+    print(s)
+
+spam = ['apples', 'bananas', 'tofu', 'cats']
+commaCode(spam)
+
 
 # Character Picture Grid Project
 '''Say you have a list of lists where each value in the inner lists
